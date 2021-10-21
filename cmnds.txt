@@ -1,0 +1,7 @@
+sequelize migration:generate --name alter_product_table
+sequelize seed:generate --name demo-order
+sequelize db:seed:all
+sequelize db:migrate 
+sequelize db:migrate:undo
+sequelize db:migrate:undo:all
+
