@@ -1,20 +1,14 @@
 const db = require("../models");
 const Address = db.address;
 const Op = db.Sequelize.Op;
+const {validationResult} = require("express-validator");
 
 //create and save new address
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.address_line_1) {
-    res.status(400).send({
-      message: "Address cannot be empty!",
-    });
-    return;
-  } else if (!req.body.address_line_2) {
-    res.status(400).send({
-      message: "Address cannot be empty!",
-    });
-    return;
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
   }
 
   //create address row
@@ -25,8 +19,8 @@ exports.create = (req, res) => {
     state: req.body.state,
     pincode: req.body.pincode,
     country: req.body.country,
-    landmark:req.body.landmark,
-    street: req.body.street
+    landmark: req.body.landmark,
+    street: req.body.street,
   };
 
   //save in the database

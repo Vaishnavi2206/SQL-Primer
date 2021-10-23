@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
     gender: {
       type: Sequelize.CHAR(1),
     },
+    password: {
+      type: Sequelize.STRING
+    },
   });
 
   return Customer

@@ -19,6 +19,7 @@ db.order_header=require("./order_header.js")(sequelize,Sequelize)
 db.product_class=require("./product_class.js")(sequelize,Sequelize)
 db.product=require("./product.js")(sequelize,Sequelize)
 db.order_items=require("./order_items.js")(sequelize,Sequelize)
+db.admin=require("./admin.js")(sequelize,Sequelize)
 
 //CUSTOMER TABLE
 db.address.hasMany(db.customer, { as: "customer" });

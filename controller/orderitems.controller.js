@@ -4,9 +4,9 @@ const OrderItems = db.order_items;
 //create and save new address
 exports.create = (req, res) => {
   const order = {
-    product_quantity:3,
-    productID:1,
-    orderID:1
+    product_quantity:req.body.product_quantity,
+    productID:req.body.productID,
+    orderID:req.body.orderID
   };
 
   //save in the database

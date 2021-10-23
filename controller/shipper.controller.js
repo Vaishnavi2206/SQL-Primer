@@ -1,7 +1,7 @@
 const db = require("../models");
 const Shipper = db.shipper;
 
-exports.find =(req, res) => {
+exports.create =(req, res) => {
   const errHandler = (err) => {
     console.log("Error:", err);
   };

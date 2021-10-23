@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const routes = require("./routes/routes");
-
+require("dotenv").config();
 // parse requests of content-type - application/json
 app.use(express.json());
 
