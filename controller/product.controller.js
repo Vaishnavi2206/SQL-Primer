@@ -3,7 +3,6 @@ const Product = db.product;
 
 //create and save new address
 exports.create = (req, res) => {
-
   const product = {
     product_desc: req.body.product_desc,
     product_price: req.body.product_price,
